@@ -116,13 +116,15 @@ namespace TechJobsConsole
             return choiceKeys[choiceIdx];
         }
 
-        private static void PrintJobs(List<Dictionary<string, string>> someJobs)
+        private static void PrintJobs(List<Dictionary<string, string>> activeJobs)
         {
-            foreach (Dictionary<string, string> dict in someJobs)
+            foreach (Dictionary<string, string> job in activeJobs)
             {
-                foreach (KeyValuePair<string, string> kvp in dict)
+                Console.WriteLine(format: "*****");
+
+                foreach (KeyValuePair<string, string> kvp in job)
                 {
-                    Console.WriteLine("Key = {0}, Value = {1}",
+                    Console.WriteLine("{0}: {1}",
                         kvp.Key, kvp.Value);
                 }
             }
