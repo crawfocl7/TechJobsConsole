@@ -58,7 +58,7 @@ namespace TechJobsConsole
             return jobs;
         }
 
-        public static List<Dictionary<string, string>> FindByValue(string column, string value)
+        public static List<Dictionary<string, string>> FindByValue(string value)
         {
             LoadData();
 
