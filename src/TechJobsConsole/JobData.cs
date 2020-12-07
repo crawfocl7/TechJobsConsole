@@ -63,6 +63,7 @@ namespace TechJobsConsole
             LoadData();
 
             Dictionary<string, string>.KeyCollection keyColl = AllJobs[0].Keys;
+
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
             foreach (Dictionary<string, string> row in AllJobs)
             {
