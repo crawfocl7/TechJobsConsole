@@ -63,6 +63,7 @@ namespace TechJobsConsole
                     // Fetch results
                     if (columnChoice.Equals("all"))
                     {
+                        //Call FindByValue method created in JobData.cs
                         searchResults = JobData.FindByValue(searchTerm);
                         PrintJobs(searchResults);
                     }
@@ -117,17 +118,25 @@ namespace TechJobsConsole
             return choiceKeys[choiceIdx];
         }
 
+        //Implemented PrintJobs
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            //Utilized if statement, so if no results are found, "No results" is returned. 
             if (someJobs.Count == 0)
             {
                 Console.WriteLine("No results");
             }
+
+            //Created foreach loop to iterate over each dictionary item (job listing) in someJobs.
             foreach (Dictionary<string, string> dict in someJobs)
             {
+                //For each item, print information in specified format
                 Console.WriteLine("*****");
+
+                //Created additional foreach KeyValuePair in the item within the dictionary to format each key with each value
                 foreach (KeyValuePair<string, string> kvp in dict)
                 {
+                    //Used string literal and utilized placeholders to pull and print each key/value pair.
                     Console.WriteLine("{0}: {1}", kvp.Key, kvp.Value);
                 }
             }
